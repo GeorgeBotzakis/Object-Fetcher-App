@@ -7,6 +7,7 @@ except Exception:
 tf.enable_v2_behavior()
 print(tf.__version__)
 print("hi")
+print("oeoeoe")
 # print(tensorflow.__version__)
 # print("helloaaaa")
 
