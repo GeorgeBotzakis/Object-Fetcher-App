@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from __future__ import absolute_import, division, print_function, unicode_literals
 try:
  import tensorflow.compat.v2 as tf
@@ -18,7 +17,3 @@ print(tf.__version__)
 # model = Sequential()
 # model.add(Dense(10, input_shape=(8,)))
 # model.add(Dense(1))
-=======
-import tensorflow
-print(tensorflow.__version__)
->>>>>>> comment
