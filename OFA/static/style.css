@@ -1,0 +1,49 @@
+#circle 
+{
+    width: 420px;
+    height: 70px;
+    background: lightseagreen;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+     border-radius: 2px 2px 25px 2px;
+     margin-left: -10px;
+}
+#result_circle 
+{
+    width: 420px;
+    height: 70px;
+    background: linear-gradient(90deg, #505f61, lightseagreen);
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+     border-radius: 2px 2px 25px 2px;
+     margin-left: -10px;
+}
+
+#home-header 
+{
+    color: white;
+}
+body 
+{
+    background-color: lightgray;
+
+}
+#main
+{
+    overflow: auto;
+    padding-bottom: 100px;
+    height: 710px;
+}
+#footer
+{
+   background-color: lightseagreen;
+   position: relative;
+   height: 264px;
+   margin-top:  -101px;
+   clear: both;
+  
+}
+#footer-content
+{
+    background-color: lightseagreen;
+}

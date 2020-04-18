@@ -2,12 +2,143 @@
 <html>
 
 <head>
-    <title>HOME PAGE</title>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- bootstrap CSS first-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+
+    <title>Home - OFA</title>
+    <script type="text/JavaScript">
+    function onLoad() {
+      onPageShow();
+      
+    }
+    function onPageShow() {
+      document.getElementById("fileupload").value="";
+      console.log("aaaaaaa")
+    }
+    
+    </script>
 </head>
 
-<body>
-    <h1>HELLO, {{content}}</h1>
-    <p>Lorem ipsum alalalaalalallaal Welcome to object fetcher app</p>
+<body onload="onLoad();" onpageshow="if (event.persisted) onPageShow();">
+ <div id="circle" class="col-lg-22 text-center">
+<h1 id ="home-header">Object Fetcher App</h1>
+ </div>
+<div id="main">
+ <div class="col-lg-12 text-center mt-5">
+    <h1>Welcome, {{content}}</h1>
+   <p>Search images with keywords or upload your own for the YOLOv3 model to predict its contents!</p>
+ </div>
+ <!-- Form Input Area-->
+
+<form role="form" method="POST" enctype="multipart/form-data">
+<div class="col-md-4 offset-md-4 mt-5 pt-3" style=" border:solid lightseagreen; border-radius: 15px;">
+ <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search via a keyword" aria-label="Recipient's username">
+  <div class="input-group-append" style="background-color:#E9ECEF">
+    <span class="input-group-btn"> 
+    <button class="btn btn-default" type="button">
+    <span class="fa fa-search"></span>
+      </button>
+      </span>
+  </div>
+ </div>
+  <div class="container pl-0">
+                     <span class="input-group-btn mb-2 row">
+                     
+                      <!-- <input type="button" id="uploadImg"   onclick="document.getElementById('fileupload').click();">
+                       
+                      <input type="file" id="fileupload"  style ="display:none;" name="file" value="Upload Image"> -->
+          
+                    <!-- <button type="button" id="uploadImg" class="btn btn-default"  onclick="document.getElementById('fileupload').click();">
+                       <span class="fa fa-search"></span>
+                     </button> -->
+                      <input  type="file" class ="col-lg justify-start" id="fileupload" name="file" accept=".png, .jpg, .jpeg">
+
+                      <button  type="submit"  class="col-m" style="background-color:#E9ECEF;"> Upload picture 
+                      <i class="fa fa-upload"></i>
+                      </button>
+                    </span> 
+                   
+                </div>
+</div>
+</form>
+</div>
+
+<footer class="page-footer font-italic pt-4" id="footer">
+  <div class="container-fluid text-cener text-md-left" id="footer-content">
+
+    <div class="row">
+
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <h5 class="text-uppercase">Contact Us</h5>
+        <p>Dissertation project by Georgios Botzakis. <br>University of Sunderland
+        </p>
+        <!-- <p></p> -->
+
+      </div>
+            <!-- Grid column -->
+
+      <!-- <hr class="clearfix w-100 d-md-none pb-3"> -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <!-- <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="color: red;">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul> -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+    
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" style="background-color: lightseagreen; margin-top: 55px;">© 2020 Copyright:
+    <p> Georgios Botzakis</p>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>

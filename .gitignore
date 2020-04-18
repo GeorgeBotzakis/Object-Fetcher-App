@@ -61,3 +61,8 @@ target/
 #ignore weights and model files until further modification
 *.weights
 *.h5
+
+OFA/test-images/
+OFA/training-images/
+OFA/input-images/
+OFA/prediction-results/
