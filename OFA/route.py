@@ -3,7 +3,7 @@ from flask import render_template, request, Response, redirect, url_for, session
 from werkzeug.utils import secure_filename
 import os
 import time
-from OFA.predictionScript import run_prediction
+from OFA.predictObjects import run_prediction
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
@@ -31,7 +31,7 @@ def convertTuple(tup):
     return str
 
 @app.route('/home', methods=['GET', 'POST'])
-def home(name="Georgie"):
+def home():
     print("aaa")
     #main11()
     if request.method == 'POST':
@@ -61,7 +61,7 @@ def home(name="Georgie"):
 
             return redirect(url_for('results',name="JEORG", labels=comma_sep, epoch_time=curr_time, filename=output_filename))
             
-    return render_template("index.html", content=name)
+    return render_template("index.html")
 
 # @app.route('/uploads/<filename>')
 # def uploaded_file(filename):
@@ -74,17 +74,16 @@ def home(name="Georgie"):
 
 
 @app.route('/results', methods=['GET', 'POST'])
-def results(name="non", labels=list(), epoch_time=0000, filename="no filename"):
+def results(labels=list(), epoch_time=0000, filename="no filename"):
     # filename = secure_filename('output.png')
     # imgPath=os.path.join(app.config['OUTPUT_FOLDER'], filename)
     filename = request.args['filename']
     labels = request.args['labels']
     print(labels)
     print(filename)
-    name = "JEORG"
     #filename="http://0.0.0.0:5000/uploads/output.png"
     curr_img = os.path.join(app.config['OUTPUT_FOLDER'], filename)
     print(curr_img)
     # myPath = "static/images/output2.png"
 
-    return render_template("results.html", content=name, output_img=curr_img)
+    return render_template("results.html", output_img=curr_img)

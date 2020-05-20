@@ -4,9 +4,7 @@
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" /> -->
+
 
     <!-- bootstrap CSS first-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -23,8 +21,9 @@
  </div>
 <div id="main">
  <div class="col-lg-12 text-center mt-5">
-    <h1>Welcome, {{content}}</h1>
-   <p>Search images with keywords or upload your own for the YOLOv3 model to predict its contents!</p>
+    <h1>The YOLOv3 prediciton output:</h1>
+   <!-- <p>Classes of objects detected:</p>
+   <p> content here </p> -->
    <img src="{{ output_img }}" alt="Output result">
 
  </div>

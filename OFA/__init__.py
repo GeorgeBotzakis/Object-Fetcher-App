@@ -14,6 +14,6 @@ app.secret_key = os.urandom(24)
 
 
 from OFA import route
-from OFA.predictionScript import run_prediction
+from OFA.predictObjects import run_prediction
 
 # database models go here

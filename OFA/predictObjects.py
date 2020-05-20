@@ -10,7 +10,6 @@ from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
 from matplotlib.patches import Rectangle
-    # print("help")
 
 
 # box = v_boxes[i]
@@ -29,7 +28,7 @@ def run_prediction(input_img):
 
     # print("help")
     # print("help")
-   labels_list, final_name = kati(input_img)
+   labels_list, final_name = run_model(input_img)
    return labels_list, final_name
 
 class BoundBox:
@@ -212,7 +211,7 @@ def draw_boxes(filename, v_boxes, v_labels, v_scores):
         # draw text and score in top left corner, 
         # with a single decimal point to display the rough estimate of the detection score
         label = "%s (%.1f)" % (v_labels[i], v_scores[i])
-        pyplot.text(x1, y1, label, color="white")
+        pyplot.text(x1, y1, label, color="red")
     # show / save the plot
     ###important
     #get epoch for unique image name
@@ -232,7 +231,7 @@ def draw_boxes(filename, v_boxes, v_labels, v_scores):
 
 
 ###PROGRAM STARTS FROM HERE
-def kati(input_image):
+def run_model(input_image):
     # load yolov3 model
     model = load_model("OFA/od_model.h5")
     # define the expected input shape for the model
@@ -261,15 +260,13 @@ def kati(input_image):
     class_threshold = 0.6  # or 60%
     boxes = list()
     boxes.clear
-    ###problem here ! ! !
+    ###problem was solved
     for i in range(len(yhat)):
         # decode the output of the network
         boxes += decode_netout(yhat[i][0], anchors[i], class_threshold, input_h, input_w)
     # correct the sizes of the bounding boxes for the shape of the image
-    ###problem here ! ! !
     correct_yolo_boxes(boxes, image_h, image_w, input_h, input_w)
-    # supress non-maximal boxes
-    ###problem here ! ! !
+    # supress non-maximal boxes 
     do_nms(boxes, 0.5)
     # define the labels
     labels = [
@@ -355,7 +352,6 @@ def kati(input_image):
         "toothbrush",
     ]
     # get the details of detected objects
-    ###problem here ! ! !
     v_boxes, v_labels, v_scores = get_boxes(boxes, labels, class_threshold)
     # summarize what we found
     if(len(v_boxes) == 0):
